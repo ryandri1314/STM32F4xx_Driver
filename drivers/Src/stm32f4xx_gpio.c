@@ -172,10 +172,10 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t State) {
 	if (State == ENABLE) { /**/
 		if (IRQNumber <= 31) {
 			*NVIC_ISER0 |= (1 << IRQNumber);
-		} else if (IRQNumber < 64) {
+		} else if (IRQNumber >= 32 && IRQNumber <= 63) {
 			*NVIC_ISER1 |= (1 << (IRQNumber % 32));
 		} else if (IRQNumber >= 64 && IRQNumber < 96) {
-			*NVIC_ISER2 |= (1 << (IRQNumber % 32));
+			*NVIC_ISER2 |= (1 << (IRQNumber % 64));
 		} else {
 			*NVIC_ISER3 |= (1 << (IRQNumber % 32));
 		}

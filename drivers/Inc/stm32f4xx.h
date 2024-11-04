@@ -24,6 +24,12 @@
 #define NVIC_ICER2	((__vol	uint32_t *)0XE000E188)
 #define NVIC_ICER3	((__vol	uint32_t *)0XE000E18C)
 
+/*	Define NVIC ICPRx Core	*/
+#define NVIC_ICPR0	((__vol	uint32_t *)0XE000E280)
+#define NVIC_ICPR1	((__vol	uint32_t *)0XE000E284)
+#define NVIC_ICPR2	((__vol	uint32_t *)0XE000E288)
+#define NVIC_ICPR3	((__vol	uint32_t *)0XE000E28C)
+
 /*	Define NVIC IPRx Core	*/
 #define NVIC_IPR0	((__vol uint32_t *)0xE000E400)
 
@@ -242,7 +248,7 @@ typedef struct {
 #define SPI1_PCLK_EN()	(RCC->APB2ENR |= (1 << 12))
 #define SPI2_PCLK_EN()	(RCC->APB1ENR |= (1 << 14))
 #define SPI3_PCLK_EN()	(RCC->APB1ENR |= (1 << 15))
-#define SPI4_PCLK_EN()	(RCC->APB2ENR |= (1 << 13))
+
 
 //Enable CLK for UARTx
 #define USART1_PCLK_EN()	(RCC->APB2ENR |= (1 << 4))
@@ -275,7 +281,6 @@ typedef struct {
 #define SPI1_PCLK_DIS()	(RCC->APB2ENR &=~ (1 << 12))
 #define SPI2_PCLK_DIS()	(RCC->APB1ENR &=~ (1 << 14))
 #define SPI3_PCLK_DIS()	(RCC->APB1ENR &=~ (1 << 15))
-#define SPI4_PCLK_DIS()	(RCC->APB2ENR &=~ (1 << 13))
 
 //Disable CLK for UARTx
 #define USART1_PCLK_DIS()	(RCC->APB2ENR &=~ (1 << 4))
@@ -308,7 +313,7 @@ typedef struct {
 #define GPIOH_REG_RESET()	do {	(RCC->AHB1RSTR |= (1 << 7));	(RCC->AHB1RSTR &= ~(1 << 7));	} while(0)
 #define GPIOI_REG_RESET()	do {	(RCC->AHB1RSTR |= (1 << 8));	(RCC->AHB1RSTR &= ~(1 << 8));	} while(0)
 
-//Convert config for EXTICR
+//Convert configure for EXTICR
 #define GPIO_BASEADDR_TO_EXTICR_CODE(x)		\
 	((x==GPIOA)?0:(x==GPIOB)?1:(x==GPIOC)?2:	\
 			(x==GPIOD)?3:(GPIOE)?4:(x==GPIOF)?5:	\
@@ -322,6 +327,48 @@ typedef struct {
 #define IRQ_EXTI4		10
 #define IRQ_EXTI9_5		23
 #define IRQ_EXTI15_10	40
+
+#define IRQ_SPI1	35
+#define IRQ_SPI2	36
+#define IRQ_SPI3	51
+
+//Define SPI_CR1 Reg
+#define SPI_CR1_CPHA		0
+#define SPI_CR1_CPOL		1
+#define SPI_CR1_MSTR		2
+#define SPI_CR1_BR			3
+#define SPI_CR1_SPE			6
+#define SPI_CR1_LSBFIRST	7
+#define SPI_CR1_SSI			8
+#define SPI_CR1_SSM			9
+#define SPI_CR1_RXONLY		10
+#define SPI_CR1_DFF			11
+#define SPI_CR1_CRCNEXT		12
+#define SPI_CR1_CRCEN		13
+#define SPI_CR1_BIDIOE		14
+#define SPI_CR1_BIDIMODE	15
+
+//Define SPI_CR2 Reg
+#define SPI_CR2_RXDMAEND	0
+#define SPI_CR2_TXDMAEND	1
+#define SPI_CR2_SSOE		2
+#define SPI_CR2_FRF			4
+#define SPI_CR2_ERRIE		5
+#define SPI_CR2_RXNEIE		6
+#define SPI_CR2_TXEIE		7
+
+//Define SPI_SR Reg
+#define SPI_SR_RXNE		0
+#define SPI_SR_TXE		1
+#define SPI_SR_CHSIDE	2
+#define SPI_SR_UDR		3
+#define SPI_SR_CRCERR	4
+#define SPI_SR_MODF		5
+#define SPI_SR_OVR		6
+#define SPI_SR_BSY		7
+#define SPI_SR_FRE		8
+
+
 
 
 #endif /* DRIVERS_INC_SMT32F4XX_H_ */
