@@ -74,10 +74,11 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx) {
 }
 
 uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint8_t FlagName) {
+	uint8_t status = RESET;
 	if (pSPIx->SR & FlagName) {
-		return FLAG_SET;
+		status = FLAG_SET;
 	}
-	return FLAG_RESET;
+	return status;
 }
 
 /*	Send and Receive Data	*/
