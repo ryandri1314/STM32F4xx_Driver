@@ -24,7 +24,7 @@ void SPI_GPIO_Init() {
 	GPIO_Handle_t SPI_Pins;
 	SPI_Pins.pGPIOx = GPIOB;
 	SPI_Pins.pGPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALT_FUNC;
-	SPI_Pins.pGPIO_PinConfig.GPIO_PinAltFuncMode = 5;
+	SPI_Pins.pGPIO_PinConfig.GPIO_PinAltFuncMode = AF5;
 	SPI_Pins.pGPIO_PinConfig.GPIO_PinOPType = GPIO_OTY_PUSH_PULL;
 	SPI_Pins.pGPIO_PinConfig.GPIO_PinPUPD = GPIO_NO_PULL_UP_PULL_DOWN;
 	SPI_Pins.pGPIO_PinConfig.GPIO_PinSpeed = GPIO_SPE_VHIGH;

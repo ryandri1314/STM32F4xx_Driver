@@ -9,6 +9,7 @@
 #define DRIVERS_INC_SMT32F4XX_H_
 
 #include <stdint.h>
+#include <stddef.h>
 
 #define __vol	volatile
 
@@ -338,6 +339,21 @@ typedef struct {
 #define IRQ_UART4	52
 #define IRQ_UART5	53
 #define IRQ_USART6	71
+
+#define IRQ_IT_I2C1_EV	31
+#define IRQ_IT_I2C1_ER	32
+#define IRQ_IT_I2C2_EV	33
+#define IRQ_IT_I2C2_ER	34
+#define IRQ_IT_I2C3_EV	72
+#define IRQ_IT_I2C3_ER	73
+
+//Define IRQ Priority
+#define IRQ_PR_I2C1_EV	38
+#define IRQ_PR_I2C1_ER	39
+#define IRQ_PR_I2C2_EV	40
+#define IRQ_PR_I2C2_ER	41
+#define IRQ_PR_I2C3_EV	79
+#define IRQ_PR_I2C3_ER	80
 
 //Define SPI_CR1 Reg
 #define SPI_CR1_CPHA		0

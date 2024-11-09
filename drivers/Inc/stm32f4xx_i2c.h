@@ -101,7 +101,7 @@ void I2C_DeInit(I2C_Handle_t *pI2C_Handle);
 void I2C_MasterSendData(I2C_Handle_t *pI2C_Handle, uint8_t *pTxBuffer, uint8_t Len, uint8_t SlaveAddress, uint8_t SR);
 void I2C_MasterReceiveData(I2C_Handle_t *pI2C_Handle, uint8_t *pRxBuffer, uint8_t Len, uint8_t SlaveAddress, uint8_t SR);
 uint8_t I2C_MasterSendDataIT(I2C_Handle_t *pI2C_Handle, uint8_t *pTxBuffer, uint8_t Len, uint8_t SlaveAddress, uint8_t SR);
-uint8_t I2C_MasterReceiveDataIT(I2C_Handle_t *pI2C_Hanlde, uint8_t *pRxBuffer, uint8_t Len, uint8_t SlaveAddress, uint8_t SR);
+uint8_t I2C_MasterReceiveDataIT(I2C_Handle_t *pI2C_Handle, uint8_t *pRxBuffer, uint8_t Len, uint8_t SlaveAddress, uint8_t SR);
 
 /*
  *	Slave Send & Receive Data
