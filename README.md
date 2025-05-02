@@ -16,6 +16,13 @@ This project is a hands-on exploration of writing low-level drivers for the STM3
 | UART   | Baud rate config, transmit/receive using polling method |
 | RCC    | System and peripheral clock configuration, enable/disable modules |
 
+## 📁 Project Structure
+
+- `Src/`: Contains all `*.c` files used for testing driver functionality (e.g., GPIO, SPI, I2C, UART tests).
+- `drivers/`: Contains the custom low-level driver implementation.
+  - `Inc/`: Header files (`*.h`) with macro definitions, register mappings, and function declarations.
+  - `Src/`: Source files (`*.c`) that implement the driver APIs and handle direct register-level interactions.
+
 ## 📈 Development Process
 
 1. **Read the STM32F4 Reference Manual** to understand peripheral behavior and register maps.
