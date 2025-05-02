@@ -28,3 +28,6 @@ This project is a hands-on exploration of writing low-level drivers for the STM3
 - **Board:** STM32F4 (e.g., STM32F401, STM32F411)
 - **Analyzer:** 8-channel 24MHz logic analyzer for signal verification
 - **Test files** for each module to verify register-level functionality
+
+## 📚 Reference documents
+- STM32F4 Reference Manual (RM0090)
